@@ -12,11 +12,13 @@ Claude, Codex, Gemini, Cursor 등 **여러 AI와 사람이 같이 작업한다.*
 | `slam/` | SLAM | 지도 작성(slam_toolbox 등), 센서 융합(robot_localization EKF) |
 | `navigation/` | 네비게이션 | Nav2 설정, 순찰 경로·웨이포인트 |
 | `deterrence/` | 퇴치 | USB DAC(MT979) → LM386 → 피에조 22 kHz 경보음 등 퇴치 출력 |
+| `detection/` | 흔적 탐지 | 쥐 배설물·흘린 사료 탐지 — 합성 데이터·학습·평가는 PC/토르에서, 젯슨에 올라가는 것은 `detection/ros2/chicken_detection` 노드뿐 |
+| `tools/` | PC 도구 | 로봇에 올리지 않고 PC 에서 돌리는 것 — 방역 기록 대시보드 등 |
 | `integration/` | 통합 | 전체 launch, 로봇 모델(URDF), 파트 간 공통 설정 — 나중에 합칠 때 쓴다 |
 
 - 새 파트가 필요하면(예: 흔적 탐지 `perception/`, 22kHz 퇴치 `deterrence/`) 폴더를 만들고 **위 표에 한 줄 추가한다.**
 - **자기 파트 폴더 밖은 고치지 않는다.** 다른 파트를 바꿔야 하면 그 파트 README 의 「요청」 절에 적어두고 넘어간다.
-- 루트에는 이 파일, `CLAUDE.md`, `INTERFACES.md`, `.gitignore` 외에 아무것도 두지 않는다.
+- 루트에는 이 파일, `CLAUDE.md`, `INTERFACES.md`, `.gitignore`, `.gitattributes` 외에 아무것도 두지 않는다.
 
 ## 2. 나중에 하나로 합칠 수 있게 만든다
 

@@ -31,3 +31,14 @@ modules.order
 # 외부 드라이버 소스 — 각자 .git 을 가진 업스트림 클론이라 올리지 않는다.
 # 받는 법은 slam/README.md 「실행 방법」 참고.
 slam/third_party/
+
+# detection 생성물 (용량 크고 재생성 가능)
+.venv/
+detection/data/
+detection/runs/
+detection/runs_summary/
+detection/weights/
+
+# 대시보드 예시 데이터·출력
+tools/patrol_dashboard/sample/
+tools/patrol_dashboard/out/
