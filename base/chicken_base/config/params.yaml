@@ -1,0 +1,26 @@
+base_node:
+  ros__parameters:
+    port: /dev/base
+    baud: 115200
+    rate_hz: 20.0
+    cmd_timeout_s: 0.5
+    max_vx: 0.3
+    max_vy: 0.3
+    max_wz: 1.0
+    odom_frame_id: odom
+    base_frame_id: base_link
+    imu_frame_id: imu_link
+
+teleop_keyboard:
+  ros__parameters:
+    max_vx: 0.3
+    max_wz: 1.0
+    vx_step: 0.05
+    wz_step: 0.1
+    vx_min_step: 0.05
+    wz_min_step: 0.1
+
+light_node:
+  ros__parameters:
+    pin: 7          # 40핀 헤더 BOARD 번호, 다이오드 B 로 라이트 주황선에 연결
+    initial_on: false

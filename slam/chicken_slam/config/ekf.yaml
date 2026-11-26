@@ -1,0 +1,33 @@
+# robot_localization EKF: /odom(바퀴) + /imu/data_raw(보드 IMU) -> odom->base_link TF
+# 각 상태량에 입력을 하나씩만 준다:
+#   - 선속도 vx, vy  <- 바퀴 /odom (twist)
+#   - 회전속도 vyaw  <- IMU 자이로 z. 바퀴 wz 는 명령보다 작게 나오는 현상이 있어(base/README) 쓰지 않는다
+# base 의 /odom, /imu covariance 가 아직 0 이다(base/README 「요청」 참고).
+ekf_filter_node:
+  ros__parameters:
+    frequency: 30.0
+    sensor_timeout: 0.2
+    two_d_mode: true
+    publish_tf: true
+    map_frame: map
+    odom_frame: odom
+    base_link_frame: base_link
+    world_frame: odom
+
+    odom0: /odom
+    # [x y z, roll pitch yaw, vx vy vz, vroll vpitch vyaw, ax ay az]
+    odom0_config: [false, false, false,
+                   false, false, false,
+                   true,  true,  false,
+                   false, false, false,
+                   false, false, false]
+    odom0_differential: false
+
+    imu0: /imu/data_raw
+    imu0_config: [false, false, false,
+                  false, false, false,
+                  false, false, false,
+                  false, false, true,
+                  false, false, false]
+    imu0_differential: false
+    imu0_remove_gravitational_acceleration: true

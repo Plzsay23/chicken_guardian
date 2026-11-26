@@ -1,0 +1,33 @@
+# ROS 2 빌드 산출물
+build/
+install/
+log/
+
+# 파이썬
+__pycache__/
+*.pyc
+
+# 기록·데이터 (데이터는 ~/chicken_data/ 에 둔다 — AGENTS.md 3절)
+*.db3
+*.mcap
+*.bag
+*.pgm
+
+# 모델 가중치
+*.pt
+*.onnx
+*.engine
+
+# 커널 모듈 빌드 산출물 (base/tools/ch341 — 소스 ch341.c, Makefile 만 올린다)
+*.ko
+*.o
+*.mod
+*.mod.c
+*.mod.o
+.*.cmd
+Module.symvers
+modules.order
+
+# 외부 드라이버 소스 — 각자 .git 을 가진 업스트림 클론이라 올리지 않는다.
+# 받는 법은 slam/README.md 「실행 방법」 참고.
+slam/third_party/
